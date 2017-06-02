@@ -1,0 +1,95 @@
+﻿<div ng-controller="ExamineDistributedDashboard">
+
+    <h3>Examine Distributed Dashboard</h3>
+
+    <div>
+        <p>This tool is not for the faint hearted, only use it if you know what you are doing!</p>
+    </div>
+
+    <div class="row">
+
+        <umb-button action="serversCheckIn()"
+                    type="button"
+                    button-style="success"
+                    state="buttonState"
+                    label="Ask all servers to log status">
+        </umb-button>
+
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div>
+            <div class="alert alert-success" ng-show="success && !failure">
+                {{successMessage.data}}
+            </div>
+            <div class="alert alert-error" ng-show="failure && !success">
+                <strong>Error</strong>, something went wrong
+            </div>
+        </div>
+    </div>
+    
+    <hr/>
+
+    <form name="rebuildForm" class="form-horizontal" role="form" ng-submit="sendRebuildRequest()">
+        
+        <div class="control-group umb-control-group">
+            <div class="umb-el-wrap">
+                
+                <label for="MachineName" class="control-label">Target Machine Name</label>
+
+                <input class="controls umb-editor umb-textstring textstring"
+                       name="MachineName"
+                       type="text"
+                       ng-model="targetMachineName"
+                       required>
+
+            </div>
+        </div>
+
+        <div class="control-group umb-control-group">
+            <div class="umb-el-wrap">
+                
+                <label for="ProcessId" class="control-label">Target ProcessId</label>
+
+                <input class="controls umb-editor umb-textstring textstring"
+                       name="ProcessId"
+                       type="text"
+                       ng-model="targetProcessId"
+                       required>
+
+            </div>
+        </div>
+
+        <div class="control-group umb-control-group">
+            <div class="umb-el-wrap">
+                
+                <label for="IndexName" class="control-label">Target IndexName</label>
+
+                <input class="controls umb-editor umb-textstring textstring"
+                       name="IndexName"
+                       type="text"
+                       ng-model="targetIndexName"
+                       required>
+
+            </div>
+        </div>
+
+        <button preventDefault class="btn btn-primary">Send Rebuild Request</button>
+
+        <hr />
+
+        <div class="row">
+            <div>
+                <div class="alert alert-success" ng-show="requestSuccess && !requestFailure">
+                    {{requestSuccessMessage.data}}
+                </div>
+                <div class="alert alert-error" ng-show="requestFailure && !requestSuccess">
+                    <strong>Error</strong>, something went wrong
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
