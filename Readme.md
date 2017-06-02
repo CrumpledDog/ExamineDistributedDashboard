@@ -8,4 +8,5 @@ This package was created for Load Balanced Umbraco installations where a particu
 
 There is also a mechanism to request that all servers log the status of all Indexes by writing to log4net. I recommend using the [AzureLogger](https://github.com/CrumpledDog/Umbraco-AzureLogger) package to make it easy to see all logs from all servers.
 
+Built against .NET Framework v4.6.2 and Umbraco v7.5.12
 
