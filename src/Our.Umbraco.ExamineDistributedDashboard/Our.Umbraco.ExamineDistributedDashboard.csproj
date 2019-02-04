@@ -204,11 +204,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="Controllers\ExamineDistributedDashboardController.cs" />
     <Compile Include="ExamineDistributedDashboardEvents.cs" />
+    <Compile Include="ExamineExtensions.cs" />
     <Compile Include="ExamineStatusLogRefresher.cs" />
     <Compile Include="Models\RebuildRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
